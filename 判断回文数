@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main()
+{
+    int m,n,s,r;
+    m=0;
+    scanf("%d",&n);
+    s=n;
+    while(s!=0)
+    {
+        r=s%10;
+        m=10*m+r;
+        s=s/10;
+    }
+    if(m==n)
+        printf("\n%d是回文数\n",n);
+    else
+        printf("\n%d不是回文数\n",n);
+    return 0;
+}
