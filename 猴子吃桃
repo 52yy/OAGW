@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main()
+{
+    int i,j,k;
+    scanf("%d",&i);
+    j=1;
+    for(k=1;k<i;k++)
+    {
+        j=2*j+2;
+    }
+    printf("%d\n",j);
+    return 0;
+}
