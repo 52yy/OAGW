@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main()
+{
+    int i,j,k,l,n;
+    for(i=2;i<1000;i++)
+    {
+        k=0;
+        for(j=1;j<i;j++)
+        {
+            if(i%j==0)
+                k+=j;
+        }
+        if(i==k)
+            printf("%6d",i);
+    }
+    return 0;
+}
