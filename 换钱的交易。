@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main()
+{
+    int n,i,j,a;
+    double b;
+    scanf("%d",&n);
+    a=100000*n;
+    b=0.01;
+    for(i=0;i<n;i++)
+    {
+        b*=2;
+    }
+    printf("%d\n%.0lf",a,b);
+}
