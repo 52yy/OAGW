@@ -1,0 +1,30 @@
+#include <stdio.h>
+int main()
+{
+    int a,b,i,j,k,l,p,o,q;
+    scanf("%d %d",&a,&b);
+    q=0;
+    for(i=a;i<=b;i++)
+    {
+        j=i*i;
+        p=1;
+        k=1;
+        for(o=i;o/10>0;)
+        {
+            k++;
+            o=o/10;
+        }
+        for(l=0;l<k;l++)
+        {
+            p=p*10;
+        }
+        if((j-i)%p==0)
+        {
+            printf("%d\n",i);
+            q++;
+        }
+    }
+    if(q==0)
+        printf("No Answer");
+    return 0;
+}
