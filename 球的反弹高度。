@@ -1,0 +1,31 @@
+#include <stdio.h>
+int main()
+{
+    int n,i;
+    double j,k,m;
+    scanf("%lf %d",&m,&n);
+    j=m;
+    k=m;
+    for(i=1;i<n*2-1;i++)
+    {
+        if(i==1||i%2!=0)
+        {
+            m=m/4.0;
+            if(i!=2*n-2)
+            {
+                j=j+m;
+            }
+            else
+                j=j;
+            k=m;
+        }
+        else
+        {
+            j=j+m;
+            k=m;
+        }
+    }
+    k=k/4.0;
+    printf("%.2lf\n%.2lf",j,k);
+    return 0;
+}
