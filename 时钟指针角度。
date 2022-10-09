@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main()
+{ 
+    double n,h,m;
+    scanf("%lf:%lf",&h,&m);
+    n=-m*6+h*30+m/2;
+    if(n>180)
+        n=360-n;
+    if(n<-180)
+        n=360+n;
+    if(n>-180&&n<0)
+        n=-n;
+    printf("%.3lf",n);
+    return 0;
+}
