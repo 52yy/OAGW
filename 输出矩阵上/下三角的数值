@@ -1,0 +1,42 @@
+#include <stdio.h>
+int main()
+{
+    int sz[100][100],i,n,j,max,k,l;
+    printf("Input n:");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            scanf("%d",&sz[i][j]);
+        }
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+           printf("%4d",sz[i][j]);
+        }
+        printf("\n");
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<=i;j++)
+        {
+            printf("%4d",sz[i][j]);
+        }
+        printf("\n");
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            if(j<i)
+                printf("    ");
+            else
+                printf("%4d",sz[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
