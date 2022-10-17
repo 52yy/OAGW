@@ -1,0 +1,21 @@
+#include <stdio.h>
+int main()
+{
+    int sz[10],i,n,j,max,k=0,l;
+    for(i=0;i<10;i++)
+    {
+        scanf("%d",&sz[i]);
+    }
+    scanf("%d",&n);
+    for(i=0;i<10;i++)
+    {
+        if(sz[i]==n)
+        {
+            printf("Index is %d",i);
+            k++;
+        }
+    }
+    if(!k)
+        printf("Not Found");
+    return 0;
+}
