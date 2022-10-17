@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main()
+{
+    int sz[10]={1,2,3,4,5,6,7,8,9,10},mid,n,i=0,right,max,k=0,left;
+    scanf("%d",&n);
+    right=9;
+    left=0;
+    mid=(left+right)/2;
+    for(mid;left<=right;mid=(left+right)/2)
+    {
+        if(sz[mid]>n)
+            right=mid-1;
+        if(sz[mid]<n)
+            left=mid+1;
+        if(sz[mid]==n)
+        {
+            printf("Index is %d\n",mid);
+            k++;
+            break;
+        }
+    }
+    if(!k)
+        printf("Not Found\n");
+    return 0;
+}
