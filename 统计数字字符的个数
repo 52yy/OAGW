@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main()
+{
+    int i,j,k=0;
+    char sz[81];
+    printf("Enter a string:");
+    gets(sz);
+    for(i=0;sz[i];i++)
+    {
+        if(sz[i]>='0'&&sz[i]<='9')
+            k++;
+    }
+    printf("count=%d",k);
+    return 0;
+}
