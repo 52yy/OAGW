@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main()
+{
+    int sz[5][5],i,j,k=0;
+    for(i=0;i<5;i++)
+        for(j=0;j<5;j++)
+        {
+            scanf("%4d",&sz[i][j]);
+            if(i==0||i==4||j==0||j==4)
+                k+=sz[i][j];
+        }
+    printf("sum=%d",k);
+    return 0;
+}
