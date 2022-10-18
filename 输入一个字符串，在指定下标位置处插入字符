@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    int i,n,k=0,len;
+    char sz[81],c[10];           //当c[10]为c[1]时，程序无法正常输出！！！！！
+    printf("Enter a string:");
+    gets(sz);
+    scanf("%s",c);
+    len=strlen(sz);
+    if(n<len)
+    {
+        for(i=len;i>n-1;i--)
+        {
+            sz[i]=sz[i-1];
+        }
+        sz[n]=c[0];
+    }
+    if(n==len)
+        sz[len]=c[0];
+    puts(sz);
+    return 0;
+}
