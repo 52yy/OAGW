@@ -1,0 +1,27 @@
+#include <stdio.h>
+int main()
+{
+    int n,i,j,k,l=0,sz[10];
+    for(i=0;i<10;i++)
+        scanf("%d",&sz[i]);
+    for(j=0;j<9;j++)
+    {
+        for(i=0;i<9;i++)
+        {
+            if(sz[i]<sz[i+1])
+            {
+                k=sz[i];
+                sz[i]=sz[i+1];
+                sz[i+1]=k;
+            }
+        }
+    }
+    for(i=0;i<10;i++)
+    {
+        printf("%4d",sz[i]);
+        if(sz[i]==sz[9])
+            l++;
+    }
+    printf("\ncount=%d",l);
+    return 0;
+}
