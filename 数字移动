@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <string.h>
+char yishu(char sz[],int m,int len)
+{
+    int j;
+    int i;
+    char k;
+    for(i=0;i<m;i++)
+    {
+        k=sz[len-1];
+        for(j=len-1;j>0;j--)
+            sz[j]=sz[j-1];
+        sz[0]=k;
+    }
+    return sz[81];
+}
+int main()
+{
+    int len,m;
+    char sz[81];
+    printf("Enter a string:");
+    gets(sz);
+    printf("Enter m:");
+    scanf("%d",&m);
+    printf("After rotate right %d bits:",m);
+    len=strlen(sz);
+    sz[81]=yishu(sz,m,len);
+    puts(sz);
+    return 0;
+}
