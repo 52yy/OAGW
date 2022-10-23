@@ -1,0 +1,32 @@
+#include <stdio.h>
+int print_wanshu(int m,int n)
+{
+    int i,j=0,k,l;
+    for(m;m<n;m++)
+    {
+        if(m==1)
+            j=1;
+        else
+            for(i=1;i<m;i++)
+                if(m%i==0)
+                    j+=i;
+        if(j==m)
+            return m;
+        else
+            return 0;
+    }
+}
+int main()
+{
+    int m,n,i,j,k,l;
+    printf("Input m:");
+    scanf("%d",&m);
+    printf("Input n:");
+    scanf("%d",&n);
+    for(m;m<n;m++)
+    {
+        if(print_wanshu(m,n))
+            printf("%5d",m);
+    }
+    return 0;
+}
