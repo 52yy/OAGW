@@ -1,0 +1,32 @@
+#include <stdio.h>
+int hexvalue(char sz[],int i)
+{
+    int k;
+    if(sz[i]>='1'&&sz[i]<='9')
+        k=sz[i]-'0';
+    if(sz[i]>='a'&&sz[i]<='f')
+        k=sz[i]-'0'-39;
+    if(sz[i]>='A'&&sz[i]<='F')
+        k=sz[i]-'0'-7;
+    return k;
+}
+int main()
+{
+    int i,sum=0;
+    char sz[81];
+    printf("Enter a string(hex):");
+    gets(sz);
+    printf("%s",sz);
+    printf("H");
+    for(i=0;sz[i];i++)
+    {
+        if(sz[i]>='1'&&sz[i]<='9')
+            sum=sum*16+hexvalue(sz,i);
+        if(sz[i]>='a'&&sz[i]<='f')
+            sum=sum*16+hexvalue(sz,i);
+        if(sz[i]>='A'&&sz[i]<='F')
+            sum=sum*16+hexvalue(sz,i);
+    }
+    printf("=%dD",sum);
+    return 0;
+}
