@@ -1,0 +1,27 @@
+#include <stdio.h>
+int jiaohuan(int sz[],int m)
+{
+    int i,j,k;
+    for(i=0;i<m;i++)
+        for(j=i;j<m;j++)
+            if(sz[i]<sz[j])
+            {
+                k=sz[i];
+                sz[i]=sz[j];
+                sz[j]=k;
+            }
+    return sz[81];
+}
+int main()
+{
+    int sz[81],i,j,k;
+    printf("Enter n:");
+    scanf("%d",&k);
+    printf("Enter %d integers:",k);
+    for(i=0;i<k;i++)
+        scanf("%d",&sz[i]);
+    jiaohuan(sz,k);
+    for(i=0;i<k;i++)
+        printf("%3d",sz[i]);
+    return 0;
+}
