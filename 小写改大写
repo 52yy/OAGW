@@ -1,0 +1,19 @@
+#include <stdio.h>
+int print_daxie(char sz[])
+{
+    int i,j;
+    for(i=0,j=0;sz[i];i++,j++)
+        if(sz[i]>='a'&&sz[i]<='z')
+            sz[j]=sz[i]+('A'-'a');
+    return sz[81];
+}
+int main()
+{
+    char sz[81];
+    int i,j;
+    printf("Enter a string:");
+    gets(sz);
+    print_daxie(sz);
+    puts(sz);
+    return 0;
+}
