@@ -1,0 +1,30 @@
+#include <stdio.h>
+int is(int m)
+{
+    int i,j,k=0,l;
+    l=m;
+    for(l;l>0;)
+    {
+        j=l%10;
+        k+=j*j*j;
+        l=l/10;
+    }
+    if(m==k)
+        return 1;
+    else
+        return 0;
+}
+int main()
+{
+    int number,m,n;
+    printf("Input m:");
+    scanf("%d",&m);
+    printf("Input n:");
+    scanf("%d",&n);
+    for(m;m<n+1;m++)
+    {
+        if(is(m))
+            printf("%d\n",m);
+    }
+    return 0;
+}
