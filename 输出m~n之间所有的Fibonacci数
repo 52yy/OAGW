@@ -1,0 +1,46 @@
+# include <stdio.h>
+int fib(int n)
+{
+    int s=0,i,j=1,k=1,l;
+    for(i=1;i<=n;i++)
+    {
+        if(i>2)
+        {
+            s=j+k;
+            j=k;
+            k=s;
+        }
+        if(i==1)
+            s=1;
+        if(i==2)
+            s=1;
+    }
+    return s;
+}
+int main()
+{
+    int m,n,i;
+    printf("Input m:");
+    scanf("%d",&m);
+    printf("Input n:");
+    scanf("%d",&n);
+    for(i=1;;i++)
+    {
+        if(m<=fib(i)&&m>fib(i-1))
+            break;
+    }
+    for(m,i;m<n+1;m++)
+    {
+        if(m==fib(i))
+        {
+            printf("%d\n",fib(i));
+            i++;
+        }
+        if(m==1)
+        {
+            printf("%d\n",fib(i));
+            i++;
+        }
+    }
+    return 0;
+}
