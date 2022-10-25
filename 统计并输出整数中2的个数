@@ -1,0 +1,21 @@
+#include <stdio.h>
+int countdigit(int n,int d)
+{
+    int i,j,k,l=n;
+    for(i=0,l;l;)
+    {
+        j=l%10;
+        l=l/10;
+        if(j==d)
+            i++;
+    }
+    return i;
+}
+int main()
+{
+    int number,digit=2,i;
+    printf("Input an integer:");
+    scanf("%d",&number);
+    printf("Number of digit 2:%d",i=countdigit(number,digit));
+    return 0;
+}
