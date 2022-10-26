@@ -1,0 +1,25 @@
+#include <stdio.h>
+int mix(int a[],int b[],int c[])
+{
+    int i,j,k=0;
+    for(i=0;i<5;i++)
+        for(j=0;j<5;j++)
+            if(a[i]==b[j])
+                c[k++]=a[i];
+    return c[5];
+}
+int main()
+{
+    int i,A[5],B[5],C[5];
+    printf("Please Enter Array A,5 digits:");
+    for(i=0;i<5;i++)
+        scanf("%d",&A[i]);
+    printf("Please Enter Array B,5 digits:");
+    for(i=0;i<5;i++)
+        scanf("%d",&B[i]);
+    C[5]=mix(A,B,C);
+    printf("A B intersection is:");
+    for(i=0;C[i];i++)
+        printf("%4d",C[i]);
+    return 0;
+}
