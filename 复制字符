@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <string.h>
+char fz(char a[],int m,int l)
+{
+    int i,j;
+    char b[81];
+    for(i=0;i<l;i++)
+        b[i]=a[i];
+    for(i=m-1,j=0;j<l-m+1;j++,i++)
+        a[j]=b[i];
+    a[j]=0;
+    return a[81];
+}
+int main()
+{
+    int m,len;
+    char a[81];
+    printf("Enter a string:");
+    gets(a);
+    len=strlen(a);
+    printf("Enter m:");
+    scanf("%d",&m);
+    a[81]=fz(a,m,len);
+    puts(a);
+    return 0;
+}
