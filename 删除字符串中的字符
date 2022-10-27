@@ -1,0 +1,28 @@
+#include <stdio.h>
+char delchar(char s[],char c)
+{
+    int i,j;
+    char l;
+    for(i=0;s[i];i++)
+        if(s[i]==c)
+        {
+            for(j=i;s[j];j++)
+            {
+                l=s[j];
+                s[j]=s[j+1];
+            }
+        }
+    return s[81];
+}
+int main()
+{
+    char s[81],c;
+    printf("Enter a string:");
+    gets(s);
+    printf("Enter a char:");
+    scanf("%c",&c);
+    s[81]=delchar(s,c);
+    printf("After deleted,the string is:");
+    puts(s);
+    return 0;
+}
