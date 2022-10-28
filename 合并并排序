@@ -1,0 +1,35 @@
+#include <stdio.h>
+void sx(int sz1[],int sz2[],int m,int n)
+{
+    int i,j,k[200],l;
+    for(i=0;i<m;i++)
+        k[i]=sz2[i];
+    for(i=m;i<m+n;i++)
+        k[i]=sz1[i-m];
+    for(i=0;k[i];i++)
+        for(j=0;k[j];j++)
+            if(k[i]<k[j])
+            {
+                l=k[i];
+                k[i]=k[j];
+                k[j]=l;
+            }
+    for(i=0;i<m+n;i++)
+        printf("%4d",k[i]);
+}
+int main()
+{
+    int i,m,n,sz1[81],sz2[81];
+    printf("Enter n:");
+    scanf("%d",&n);
+    printf("Enter %d integers:",n);
+    for(i=0;i<n;i++)
+        scanf("%d",&sz1[i]);
+    printf("Enter m:");
+    scanf("%d",&m);
+    printf("Enter %d integers:",m);
+    for(i=0;i<m;i++)
+        scanf("%d",&sz2[i]);
+    sx(sz1,sz2,m,n);
+    return 0;
+}
