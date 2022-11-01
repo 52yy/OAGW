@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+    int s,a,b,c,x;
+    double S,y;
+    scanf("%d%d%d",&a,&b,&c);
+    y=0.5;
+    s=a+b+c;
+    s=s/2;
+    x=s*(s-a)*(s-b)*(s-c);
+    S=pow(x,y);
+    printf("%.3lf",S);
+    return 0;
+}
