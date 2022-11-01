@@ -1,0 +1,28 @@
+#include<stdio.h>
+int main()
+{
+    int sz[4],i,n,s=0,j,l;
+    scanf("%d",&n);
+    for(i=0;i<4;i++)
+    {
+        sz[i]=(n+9)%10;
+        n=n/10;
+        printf("%d\n",sz[i]);
+    }
+    for(i=0;i*2<4;i++)
+    {
+        l=sz[i];
+        sz[i]=sz[3-i];
+        sz[3-i]=l;
+    }
+    for(i=0;i*2<4;i++)
+    {
+        l=sz[i];
+        sz[i]=sz[2+i];
+        sz[2+i]=l;
+    }
+    for(i=0;i<4;i++)
+        s=s*10+sz[i];
+    printf("%d",s);
+    return 0;
+}
