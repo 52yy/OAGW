@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[81],cut[81],a[81];
+    int i,j,k=0,l;
+    gets(str);
+    gets(cut);
+    for(i=0;str[i];i++)
+    {
+        a[k]=str[i];
+        k++;
+        for(j=0;cut[j];j++)
+            if(str[i]==cut[j])
+            {
+                a[k-1]=0;
+                if(a[0]!=0)
+                    puts(a);
+                k=0;
+                l=i;
+            }
+    }
+    printf("%s",str+l+1);
+    return 0;
+}
