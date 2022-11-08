@@ -1,0 +1,48 @@
+#include<stdio.h>
+int xx(int a[],int n)
+{
+    int i,j,k=a[0];
+    for(i=1;i<n;i++)
+        if(a[i]>k)
+            k=a[i];
+    return k;
+}
+int px(int a[],int l)
+{
+    int i,j,k;
+    for(i=0;i<l;i++)
+        for(j=0;j<l;j++)
+            if(a[i]<a[j])
+            {
+                k=a[i];
+                a[i]=a[j];
+                a[j]=k;
+            }
+    return a[81];
+}
+int main()
+{
+    int i,n,j,z,s,sz[81],b[81],a[81];
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+        scanf("%d",&sz[i]);
+    for(i=0;i<n;i++)
+    {
+        z=0;
+        for(j=i;j<n;j++)
+            if(sz[i]==sz[j])
+                z=z+1;
+        b[i]=z;
+    }
+    s=xx(b,n);
+    for(i=0,j=0;i<n;i++)
+        if(b[i]==s)
+        {
+            a[j]=sz[i];
+            j++;
+        }
+    a[81]=px(a,j);
+    for(i=0;i<j;i++)
+        printf("%d %d\n",a[i],s);
+    return 0;
+}
