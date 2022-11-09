@@ -1,0 +1,49 @@
+#include<stdio.h>
+int main()
+{
+    int i,j;
+    double a[81],b[81],c[81],e[81];
+    double ave=0,l;
+    for(i=0;i<5;i++)                             //输入
+    {
+        scanf("%lf %lf",&a[i],&b[i]);
+        e[i]=b[i];
+    }
+    for(i=0;i<5;i++)                             //排序
+        for(j=0;j<5;j++)
+            if(b[i]<b[j])
+            {
+                l=b[i];
+                b[i]=b[j];
+                b[j]=l;
+            }
+    for(i=0;i<3;i++)                            //删去最大与最小的数
+    {
+        b[i]=b[i+1];
+        ave=ave+b[i];
+    }
+    ave=ave/3;                                 //求平均数
+    printf("%.2lf\n",ave);
+    for(i=0;i<3;i++)                           //求最接近的数
+    {
+        if(b[i]>=ave)
+            c[i]=b[i]-ave;
+        else
+            c[i]=ave-b[i];
+    }
+    for(i=0;i<3;i++)
+        for(j=0;j<3;j++)
+            if(c[i]<c[j])
+            {
+                l=c[i];
+                c[i]=c[j];
+                c[j]=l;
+            }
+    for(i=0;i<5;i++)
+        if(c[0]+ave==e[i]||ave-c[0]==e[i])
+            {
+                printf("%.0lf",a[i]);
+                break;
+            }
+    return 0;
+}
