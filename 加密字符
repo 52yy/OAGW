@@ -1,0 +1,34 @@
+#include<stdio.h>
+#include<string.h>
+char jm(char b[],int len)
+{
+    int i,l;
+    for(i=0;i<len;i++)
+    {
+        if(b[i]<='x'&&b[i]>='d')
+            b[i]=b[i]-3;
+        else if(b[i]<='X'&&b[i]>='D')
+            b[i]=b[i]-3;
+        else if(b[i]<='c'&&b[i]>='a')
+            b[i]=b[i]+23;
+        else if(b[i]<='C'&&b[i]>='A')
+            b[i]=b[i]+23;
+    }
+    for(i=0;i<len/2;i++)
+    {
+        l=b[i];
+        b[i]=b[len-i-1];
+        b[len-i-1]=l;
+    }
+    return b[81];
+}
+int main()
+{
+    int len=0;
+    char a[81];
+    gets(a);
+    len=strlen(a);
+    a[81]=jm(a,len);
+    puts(a);
+    return 0;
+}
