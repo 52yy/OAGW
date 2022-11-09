@@ -1,0 +1,54 @@
+#include<stdio.h>
+int main()
+{
+    int a[10][10],i,k,j,s,m,n,l,p;
+    scanf("%d %d",&m,&n);
+    for(i=0;i<m;i++)
+        for(j=0;j<n;j++)
+            scanf("%d",&a[i][j]);
+    for(i=0;i<m;i+=2)
+    {
+        s=0;
+        l=0;
+        for(j=0;j<n;j++)
+            s+=a[i][j];
+        p=s;
+        printf("%d:",s);
+        if(s==0)
+            printf(" ling");
+        for(;s;)
+        {
+            k=s%10;
+            l=l*10+k;
+            s=s/10;
+        }
+        for(l;p;)
+        {
+            k=l%10;
+            if(k==0)
+                printf(" ling");
+            if(k==1)
+                printf("   yi");
+            if(k==2)
+                printf("   er");
+            if(k==3)
+                printf("  san");
+            if(k==4)
+                printf("   si");
+            if(k==5)
+                printf("   wu");
+            if(k==6)
+                printf("  liu");
+            if(k==7)
+                printf("   qi");
+            if(k==8)
+                printf("   ba");
+            if(k==9)
+                printf("  jiu");
+            l=l/10;
+            p=p/10;
+        }
+        printf("\n");
+    }
+    return 0;
+}
