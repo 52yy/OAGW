@@ -1,0 +1,28 @@
+#include<stdio.h>
+int comb(int a,int b)
+{
+    int k=0,s=0,l=0;
+    int i;
+    for(i=0;i<2;i++)
+    {
+        k=a%10;
+        s=s*100+k;
+        a=a/10;
+    }
+    s=s*10;
+    for(i=0;i<2;i++)
+    {
+        k=b%10;
+        l=l*100+k;
+        b=b/10;
+    }
+    return s+l;
+}
+int main()
+{
+    int a,b,c;
+    scanf("%d %d",&a,&b);
+    c=comb(a,b);
+    printf("%d",c);
+    return 0;
+}
