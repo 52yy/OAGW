@@ -1,0 +1,41 @@
+#include<stdio.h>
+int xs(int m,int n)
+{
+    int i=0,j=0,k=0,s=0,l=0;
+    for(m;m;)
+    {
+        k=m%10;
+        s=s*10+k;
+        if(k==n)
+        {
+            l++;
+            s=s/10;
+        }
+        m=m/10;
+    }
+    if(!l)
+        return 0;
+    else
+    {
+        for(s;s;)
+        {
+            i=s%10;
+            j=j*10+i;
+            s=s/10;
+        }
+        return j;
+    }
+}
+int main()
+{
+    int m,n,s;
+    double x;
+    scanf("%d%d",&m,&n);
+    s=xs(m,n);
+    x=(double)m/s;
+    if(s)
+        printf("%d,%.2lf",s,x);
+    if(!s)
+        printf("%d不存在于%d中",n,m);
+    return 0;
+}
