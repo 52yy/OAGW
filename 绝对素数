@@ -1,0 +1,38 @@
+#include<stdio.h>
+int jdss(int a,int b)
+{
+    int i,j,k=0,n=0,m=0,l=0,p=a;
+    for(a;a<=b;a++)
+    {
+        if(a==2)
+            return 2;
+        for(i=2;i<=a/2;i++)
+            if(a%i==0)
+                k++;
+        if(!k)
+        {
+            for(a;a;)
+            {
+                m=a%10;
+                n=m+n*10;
+                a=a/10;
+            }
+            for(j=2;j<=n/2;j++)
+                if(n%j==0)
+                    l++;
+            if(!l)
+                return p;
+            else
+                return -1;
+        }
+    }
+}
+int main()
+{
+    int a,b;
+    scanf("%d%d",&a,&b);
+    for(;a<=b;a++)
+        if(a==jdss(a,b))
+            printf("%d\n",a);
+    return 0;
+}
