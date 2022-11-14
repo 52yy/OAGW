@@ -1,0 +1,39 @@
+两种方法
+
+    （一）
+                  #include<stdio.h>
+                  int main()
+                  {
+                      char a;
+                      int i=0;
+                      a=getchar();
+                      while(a!='\n')
+                      {
+                          a=getchar();
+                          if(a>='0'&&a<='9')
+                          {
+                              printf("%c ",a);
+                              i++;
+                          }
+                      }
+                      printf("\nThere are %d digits\n",i);
+                      return 0;
+                  }
+                  
+         
+    （二）
+    
+                  #include <stdio.h>
+                  int main()
+                  {
+                      char c;
+                      int ct=0;
+                      while ((c=getchar())!='\n')
+                          if(c>='0'&&c<='9')
+                          {
+                              ct++;
+                              printf("%c ",c);
+                          }
+                      printf("\nThere are %d digits!\n",ct);
+                      return 0;
+                  }
