@@ -1,3 +1,45 @@
+两种方法      （一）   &   （二）函数
+
+
+（一）
+
+#include<stdio.h>
+int main()
+{
+    int i,j=0,k=0,l,m,n,flag=0;
+    double b;
+    scanf("%d%d",&m,&n);
+    l=m;
+    b=m;
+    for(;l;)
+    {
+        i=l%10;
+        if(n==i)
+            flag++;
+        else
+            j=j*10+i;
+        l=l/10;
+    }
+    for(;j;)
+    {
+        i=j%10;
+        k=k*10+i;
+        j=j/10;
+    }
+    b=(double)m/k;
+    if(flag!=0)
+        printf("%d,%.2lf",k,b);
+    else
+        printf("%d不存在于%d中",n,m);
+    return 0;
+}
+
+
+
+
+（二）函数
+
+
 #include<stdio.h>
 int xs(int m,int n)
 {
