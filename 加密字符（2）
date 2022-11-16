@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<string.h>
+char jm(char a[],int len)
+{
+    int i,j,l=0;
+    char b,k;
+    for(i=0;i<len/2;i++)                       //逆序
+    {
+        b=a[i];
+        a[i]=a[len-1-i];
+        a[len-1-i]=b;
+    }
+    for(k='Z';k>='A';k--)                       //加密
+    {
+        l=0;
+        for(j=0;j<len;j++)
+            if(a[j]==k)
+                l++;
+        if(l==0)
+            a[len++]=k;
+    }
+    return a[81];
+}
+int main()
+{
+    int len=0;
+    char arr[81];
+    gets(arr);
+    len=strlen(arr);
+    arr[81]=jm(arr,len);
+    puts(arr);
+    return 0;
+}
